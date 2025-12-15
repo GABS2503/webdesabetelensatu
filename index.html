@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Desa Betelen Satu</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="img/logo.png" alt="Logo Desa Betelen Satu" class="logo-img">
+    <strong>Desa Betelen Satu</strong><br>
+    <small>Minahasa Tenggara</small>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#penduduk">Penduduk</a></li>
+      <li><a href="#bidang-desa">Kondisi Desa</a></li>
+      <li><a href="#struktur">Struktur Desa</a></li>
+      <li><a href="#video-profil">Video Profil</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Selamat Datang</h1>
+    <h2>Website Resmi Desa Betelen Satu</h2>
+    <p>Kecamatan Tombatu, Minahasa Tenggara</p>
+  </div>
+</section>
+
+<section id="profil" class="card">
+<h2>Profil Desa</h2>
+<br>
+<div id="profil-desa"></div>
+</section>
+
+<section id="penduduk" class="card">
+<h2>Data Penduduk</h2>
+<br>
+<div class="jaga-grid" id="data-penduduk"></div>
+</section>
+
+<section id="bidang-desa" class="card">
+  <h2>Kondisi Bidang Desa</h2>
+  <br>
+  <div class="tabs" id="tabs-bidang"></div>
+  <div id="konten-bidang"></div>
+</section>
+
+<section id="struktur" class="card">
+  <h2>Struktur Pemerintahan Desa</h2>
+  <button class="btn-struktur" onclick="toggleStruktur()">
+    Lihat / Tutup Struktur Desa
+  </button>
+  <div id="struktur-desa" class="tab-content struktur-tab"></div>
+</section>
+
+<section id="video-profil" class="card">
+  <h2>Video Profil Desa</h2>
+  <br>
+  <div id="video-container"></div>
+</section>
+
+<footer>
+<p>© 2025 Desa Betelen Satu</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

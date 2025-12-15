@@ -1,0 +1,533 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+background: #f4f7fb;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+position: absolute;
+top: 0;
+width: 100%;
+z-index: 10;
+background: rgba(10,31,68,0.75);
+color: white;
+padding: 15px 40px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+backdrop-filter: blur(6px);
+}
+
+.navbar ul {
+display: flex;
+gap: 25px;
+list-style: none;
+}
+
+.navbar a {
+color: white;
+text-decoration: none;
+font-weight: 500;
+}
+
+.navbar a:hover {
+text-decoration: underline;
+}
+
+.logo small {
+font-size: 12px;
+opacity: 0.85;
+}
+
+/* ===== HERO ===== */
+.hero {
+height: 100vh;
+background:
+
+url('../img/background.jpg');
+background-size: cover;
+background-position: center;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 20px;
+}
+
+.hero-content h1 {
+font-size: 42px;
+font-weight: 700;
+}
+
+.hero-content h2 {
+font-size: 32px;
+margin: 10px 0;
+}
+
+.hero-content p {
+font-size: 16px;
+opacity: 0.9;
+}
+
+/* ===== CARD ===== */
+.card {
+background: white;
+margin: 30px;
+padding: 30px;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+/* ===== PROFIL DESA ===== */
+#profil-desa {
+  line-height: 1.8;
+  color: #1f2937;
+}
+
+/* VISI */
+.profil-visi {
+  background: linear-gradient(135deg, #0a1f44, #0a1f44);
+  color: white;
+  padding: 20px 25px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 15px rgba(10,31,68,.25);
+}
+
+/* JUDUL SUB */
+#profil-desa h3 {
+  margin: 25px 0 12px;
+  font-size: 20px;
+  color: #0a1f44;
+  border-left: 5px solid #0a1f44;
+  padding-left: 12px;
+}
+
+/* SEJARAH */
+.profil-sejarah {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  max-height: 320px;
+  overflow-y: auto;
+  border: 1px solid #e5e7eb;
+}
+
+.profil-sejarah p {
+  margin-bottom: 12px;
+  text-align: justify;
+  font-size: 15px;
+}
+
+/* INFO GRID */
+.profil-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.profil-box {
+  background: #ffffff;
+  padding: 18px 20px;
+  border-radius: 12px;
+  border-left: 6px solid #0a1f44;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+}
+
+.profil-box strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #0a1f44;
+}
+
+/* BATAS WILAYAH */
+.profil-box ul {
+  padding-left: 18px;
+}
+
+.profil-box li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+/* ===== TAB CONTENT ===== */
+.tab-content {
+  animation: fadeIn .3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .profil-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== JAGA ===== */
+.jaga-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+}
+
+.jaga {
+background: #0a1f44;
+color: white;
+padding: 20px;
+border-radius: 10px;
+}
+
+/* ===== TABS ===== */
+.tabs {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-bottom: 20px;
+}
+
+.tabs button {
+background: #0a1f44;
+color: white;
+border: none;
+padding: 10px 15px;
+border-radius: 8px;
+cursor: pointer;
+}
+
+.tabs button:hover {
+background: #12336d;
+}
+
+.tab-content {
+display: none;
+background: #eef2f9;
+padding: 20px;
+border-radius: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+background: #0a1f44;
+color: white;
+text-align: center;
+padding: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+.navbar ul {
+display: none;
+}
+
+.hero-content h1 {
+font-size: 30px;
+}
+
+.hero-content h2 {
+font-size: 22px;
+}
+
+}
+/* ===== GLOBAL ANIMATION ===== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== NAVBAR ANIMATION ===== */
+.navbar {
+  animation: slideDown 0.8s ease forwards;
+}
+
+/* ===== HERO TEXT ANIMATION ===== */
+.hero-content h1 {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero-content h2 {
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-content p {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* ===== CARD ANIMATION ===== */
+.card {
+  animation: zoomIn 0.6s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,.15);
+}
+
+/* ===== PROFIL BOX ANIMATION ===== */
+.profil-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profil-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(10,31,68,.18);
+}
+
+/* ===== JAGA ANIMATION ===== */
+.jaga {
+  animation: fadeUp 0.7s ease forwards;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.jaga:hover {
+  transform: translateY(-6px) scale(1.02);
+  background: #12336d;
+}
+
+/* ===== TABS ANIMATION ===== */
+.tabs button {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.tabs button:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== TAB CONTENT ANIMATION ===== */
+.tab-content {
+  animation: fadeUp 0.4s ease;
+}
+
+/* ===== SCROLL ANIMATION (SMOOTH) ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== FOOTER FADE ===== */
+footer {
+  animation: fadeUp 0.8s ease;
+}
+.counter {
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffdd57;
+  display: inline-block;
+  min-width: 40px;
+  transition: transform 0.3s ease;
+}
+
+.jaga:hover .counter {
+  transform: scale(1.15);
+}
+/* ===== STRUKTUR DESA ===== */
+.struktur-wrapper {
+  text-align: center;
+}
+
+.struktur-wrapper img {
+  max-width: 100%;
+  margin-top: 20px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  transition: transform .3s ease;
+}
+
+.struktur-wrapper img:hover {
+  transform: scale(1.02);
+}
+
+.struktur-caption {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #374151;
+  font-style: italic;
+}
+/* Grup tab */
+.bidang-tab {
+  margin-top: 15px;
+}
+
+.struktur-tab {
+  margin-top: 25px;
+  border-top: 2px dashed #cbd5f5;
+  padding-top: 20px;
+}
+.btn-struktur {
+  display: inline-block;
+  margin: 12px 0 20px;
+  padding: 10px 22px;
+
+  background: linear-gradient(135deg, #0a1f44, #0a1f44);
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px #1e3a8a4d;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.btn-struktur:hover {
+  background: linear-gradient(135deg, #12336d, #12336d);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(30, 58, 138, 0.4);
+}
+
+/* Active (klik) */
+.btn-struktur:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 8px rgba(30, 58, 138, 0.3);
+}
+
+/* Fokus (aksesibilitas) */
+.btn-struktur:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #1e3a8a4d;
+}
+/* ============================= */
+/* SMOOTH SCROLL + OFFSET NAVBAR */
+/* ============================= */
+
+section {
+  scroll-margin-top: 90px; /* agar tidak ketutup navbar */
+}
+
+/* ============================= */
+/* ANIMASI MUNCUL SAAT DISCROLL */
+/* ============================= */
+
+.card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ===== LOGO NAVBAR ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column; /* ⬅ membuat teks ke bawah */
+  line-height: 1.2;
+}
+
+.logo-text strong {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.logo-text small {
+  font-size: 12px;
+  opacity: 0.85;
+}
+@media (max-width: 768px) {
+  .logo-img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo-text strong {
+    font-size: 16px;
+  }
+}
+
+.video-section {
+  text-align: center;
+}
+
+.video-desc {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 15px;
+}
+
+.video-wrapper {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .video-wrapper iframe {
+    height: 240px;
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
