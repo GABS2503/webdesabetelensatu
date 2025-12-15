@@ -214,17 +214,16 @@ fetch(`${API}/struktur-desas?populate=gambar_struktur`)
   .catch(err => console.error("Struktur Desa Error:", err));
 
 /* ===== TOGGLE STRUKTUR DESA ===== */
-window.toggleStruktur = function () {
+// JavaScript
+function toggleStruktur() {
   const struktur = document.getElementById("struktur-desa");
-  if (!struktur) return;
-
-  if (struktur.style.display === "none") {
+  if (struktur.style.display === "block") {
+    struktur.style.display = "none";
+  } else {
     struktur.style.display = "block";
     struktur.scrollIntoView({ behavior: "smooth", block: "start" });
-  } else {
-    struktur.style.display = "none";
   }
-};
+}
 
 /* ================= VIDEO PROFIL DESA ================= */
 fetch(`${API}/video-profil-desas`)
