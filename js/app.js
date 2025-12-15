@@ -1,4 +1,4 @@
-const API = "http://localhost:1337/api";
+const API = "https://backend-desa-production.up.railway.app/api";
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
