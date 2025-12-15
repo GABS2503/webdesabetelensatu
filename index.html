@@ -54,12 +54,11 @@
 
 <section id="struktur" class="card">
   <h2>Struktur Pemerintahan Desa</h2>
-  <button onclick="toggleStruktur()">Tampilkan Struktur Desa</button>
-  <div id="struktur-desa" style="display:none">
-  <div class="struktur-wrapper">
-    <img id="struktur-img" src="img/struktur.jpg" alt="Struktur Desa" style="max-width:100%;" />
-  </div>
-</div>
+  <button class="btn-struktur" onclick="toggleStruktur()">
+    Lihat / Tutup Struktur Desa
+  </button>
+  <div id="struktur-desa" class="tab-content struktur-tab"></div>
+</section>
 
 <section id="video-profil" class="card">
   <h2>Video Profil Desa</h2>

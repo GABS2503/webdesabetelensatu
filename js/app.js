@@ -177,7 +177,7 @@ function openBidangTab(id) {
 }
 
 /* ===== LOAD STRUKTUR DESA ===== */
-fetch(`${API}/struktur-desas?populate=gambar_struktur`)
+fetch(`${API}/struktur-desas`)
   .then(res => res.json())
   .then(res => {
     if (!res.data || res.data.length === 0) return;
@@ -189,41 +189,32 @@ fetch(`${API}/struktur-desas?populate=gambar_struktur`)
 
     // CEK GAMBAR
     let imgHtml = "";
-    if (
-      s.gambar_struktur &&
-      s.gambar_struktur.data &&
-      s.gambar_struktur.data.attributes &&
-      s.gambar_struktur.data.attributes.url
-    ) {
-      const imgUrl = BACKEND + s.gambar_struktur.data.attributes.url;
+    if (s.gambar_struktur && s.gambar_struktur.url) {
+      const imgUrl = BACKEND + s.gambar_struktur.url;
       imgHtml = `<img src="${imgUrl}" alt="Struktur Desa">`;
     }
 
-    const container = document.getElementById("struktur-desa");
-    container.innerHTML = `
+    document.getElementById("struktur-desa").innerHTML = `
       <h3>${s.judul}</h3>
       <div class="struktur-wrapper">
         ${imgHtml}
         <p>${s.keterangan || ""}</p>
       </div>
     `;
-
-    // SEMBUNYIKAN AWAL
-    container.style.display = "none";
   })
   .catch(err => console.error("Struktur Desa Error:", err));
 
-/* ===== TOGGLE STRUKTUR DESA ===== */
-// JavaScript
-function toggleStruktur() {
-  const struktur = document.getElementById("struktur-desa");
-  if (struktur.style.display === "block") {
-    struktur.style.display = "none";
+window.toggleStruktur = function () {
+  const el = document.getElementById("struktur-desa");
+  if (!el) return;
+
+  if (el.style.display === "none" || el.style.display === "") {
+    el.style.display = "block";
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
   } else {
-    struktur.style.display = "block";
-    struktur.scrollIntoView({ behavior: "smooth", block: "start" });
+    el.style.display = "none";
   }
-}
+};
 
 /* ================= VIDEO PROFIL DESA ================= */
 fetch(`${API}/video-profil-desas`)
