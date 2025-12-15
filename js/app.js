@@ -204,6 +204,18 @@ fetch(`${API}/struktur-desas`)
   })
   .catch(err => console.error("Struktur Desa Error:", err));
 
+window.toggleStruktur = function () {
+  const el = document.getElementById("struktur-desa");
+  if (!el) return;
+
+  if (el.style.display === "none" || el.style.display === "") {
+    el.style.display = "block";
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  } else {
+    el.style.display = "none";
+  }
+};
+
 /* ================= VIDEO PROFIL DESA ================= */
 fetch(`${API}/video-profil-desas`)
   .then(res => res.json())
