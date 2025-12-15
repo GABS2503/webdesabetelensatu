@@ -14,7 +14,7 @@ document.querySelectorAll(".card").forEach(card => {
   observer.observe(card);
 });
 /* ================= PROFIL DESA ================= */
-fetch(`${API}/api/profil-desas`)
+fetch(`${API}/profil-desas`)
   .then(res => res.json())
   .then(res => {
     const profil = res.data[0];
