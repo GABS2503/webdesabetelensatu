@@ -177,31 +177,32 @@ function openBidangTab(id) {
 }
 
 /* ===== LOAD STRUKTUR DESA ===== */
-fetch(`${API}/struktur-desas?populate=gambar_struktur`)
+fetch(`${API}/struktur-desas`)
   .then(res => res.json())
   .then(res => {
+    if (!res.data || res.data.length === 0) return;
+
     const s = res.data[0];
-    const imgUrl = `http://localhost:1337${s.gambar_struktur.url}`;
+
+    // BASE URL BACKEND (Railway)
+    const BACKEND = "https://backend-desa-production.up.railway.app";
+
+    // CEK GAMBAR
+    let imgHtml = "";
+    if (s.gambar_struktur && s.gambar_struktur.url) {
+      const imgUrl = BACKEND + s.gambar_struktur.url;
+      imgHtml = `<img src="${imgUrl}" alt="Struktur Desa">`;
+    }
 
     document.getElementById("struktur-desa").innerHTML = `
       <h3>${s.judul}</h3>
       <div class="struktur-wrapper">
-        <img src="${imgUrl}" alt="Struktur Desa">
+        ${imgHtml}
         <p>${s.keterangan || ""}</p>
       </div>
     `;
-  });
-
-function toggleStruktur() {
-  const struktur = document.getElementById("struktur-desa");
-
-  if (struktur.style.display === "block") {
-    struktur.style.display = "none";
-  } else {
-    struktur.style.display = "block";
-    struktur.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-}
+  })
+  .catch(err => console.error("Struktur Desa Error:", err));
 
 /* ================= VIDEO PROFIL DESA ================= */
 fetch(`${API}/video-profil-desas`)
